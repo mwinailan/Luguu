@@ -56,7 +56,7 @@
         app:srcCompat="@drawable/nostars_placeholder" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/profilePicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
