@@ -1,3 +1,9 @@
+## Author:
+- Felicia Audrey Sugiarta
+- Felix Tanjaya
+- Matthew Winailan
+- Raphael Deonova
+
 # Inspiration
 Studying alone at a library or even public spaces may make you feel more effective or even more productive. However, while studying, we are faced with confussion, dilemas or even loneliness. This made us address common situation of students that **have anxiety for asking question** to to professors, teaching assistant, friends, or even people that you don't even know if they can answer the questions. 
 
