@@ -7,12 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.firebase.FirebaseApp;
-import com.projects.luguu.modules.Account;
-import com.projects.luguu.modules.Activity;
 import com.projects.luguu.modules.MainApp;
 
-import java.util.Date;
 
 public class TuteeActivity extends AppCompatActivity {
 
@@ -22,14 +18,6 @@ public class TuteeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutee);
-
-        FirebaseApp.initializeApp(this);
-        //Testing
-        Account testAccount = new Account("testFromJava", 9808);
-        testAccount.addMenteeingActivity(
-                new Activity(testAccount,testAccount, "MATH 200", "UBC", new Date(), testAccount.getId())
-        );
-        mainApp.addAccount(testAccount);
 
         Button mentorButton =  findViewById(R.id.mentorButton);
         mentorButton.setOnClickListener(new View.OnClickListener() {

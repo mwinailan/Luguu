@@ -1,6 +1,7 @@
 package com.projects.luguu.modules;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class HelpPost {
     private Account poster;
@@ -8,7 +9,7 @@ public class HelpPost {
     private Date starttime;
     private String description;
     private String location;
-    private String postid;
+    private UUID postid;
     private boolean isAccepted;
 
     public HelpPost(Account poster, String subject, String description, Date starttime, String location) {
@@ -18,8 +19,7 @@ public class HelpPost {
         this.location = location;
         this.starttime = starttime;
 
-        //TODO: generate unique postid
-        this.postid = "";
+        this.postid = UUID.randomUUID();
     }
 
     public String getLocation() {
@@ -42,7 +42,7 @@ public class HelpPost {
         return description;
     }
 
-    public String getPostid() {
+    public UUID getPostid() {
         return postid;
     }
 }
