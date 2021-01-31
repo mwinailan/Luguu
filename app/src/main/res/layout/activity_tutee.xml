@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="168dp"
         android:background="#FFFFFF"
         android:src="@drawable/add_symbol_wbg"
         app:layout_constraintEnd_toEndOf="parent"

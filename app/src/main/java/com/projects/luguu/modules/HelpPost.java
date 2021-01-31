@@ -8,7 +8,7 @@ public class HelpPost {
     private Date starttime;
     private String description;
     private String location;
-    private long postid;
+    private String postid;
     private boolean isAccepted;
 
     public HelpPost(Account poster, String subject, String description, Date starttime, String location) {
@@ -19,7 +19,7 @@ public class HelpPost {
         this.starttime = starttime;
 
         //TODO: generate unique postid
-        this.postid = 0;
+        this.postid = "";
     }
 
     public String getLocation() {
@@ -42,7 +42,7 @@ public class HelpPost {
         return description;
     }
 
-    public long getPostid() {
+    public String getPostid() {
         return postid;
     }
 }

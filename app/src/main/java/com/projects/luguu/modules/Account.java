@@ -6,14 +6,17 @@ import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Account implements Observer {
+public class Account{
+    private static int currentCount = 1;
+
     private String name;
     private long phoneNumber;
     private ArrayList<Activity> mentoringhistory;
     private ArrayList<Activity> menteeinghistory;
     private ArrayList<HelpPost> activePosts;
-    private long rating;
+    private float rating;
     private Activity currentActivity;
+    private String id;
 
     private static PostsContainer postsContainer;
 
@@ -26,6 +29,9 @@ public class Account implements Observer {
         this.rating = 0;
         this.currentActivity = null;
         postsContainer = PostsContainer.getInstance();
+
+        this.id = Integer.toOctalString(currentCount);
+        currentCount = currentCount*13 + 17;
     }
 
     //TODO
@@ -62,7 +68,7 @@ public class Account implements Observer {
         return name;
     }
 
-    public long getRating() {
+    public float getRating() {
         return rating;
     }
 
@@ -86,9 +92,7 @@ public class Account implements Observer {
         this.activePosts.remove(hpost);
     }
 
-    // Observe: set currentActivity to null if currentActivity has been completed and updated
-    @Override
-    public void update(Observable o, Object arg) {
-        //TODO
+    public String getId() {
+        return id;
     }
 }

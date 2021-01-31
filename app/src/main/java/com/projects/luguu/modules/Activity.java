@@ -3,8 +3,8 @@ package com.projects.luguu.modules;
 import java.util.Date;
 import java.util.Observable;
 
-public class Activity extends Observable {
-    protected long id;
+public class Activity {
+    protected String id;
     private String location;
     protected Account mentor;
     protected Account mentee;
@@ -14,7 +14,7 @@ public class Activity extends Observable {
     protected float menteerating;
     private boolean isFullfilled;
 
-    public Activity(Account mentor, Account mentee, String subject, String location, Date starttime, long postid){
+    public Activity(Account mentor, Account mentee, String subject, String location, Date starttime, String postid){
         this.mentor = mentor;
         this.mentee = mentee;
         this.subject = subject;
@@ -23,8 +23,6 @@ public class Activity extends Observable {
         this.mentorrating = 0;
         this.menteerating = 0;
         this.isFullfilled = false;
-
-        //TODO: generate unique id after each account
         this.id = postid;
     }
 
@@ -58,19 +56,26 @@ public class Activity extends Observable {
         return 0;
     }
 
-    //observers are:
-    //  -mentors
-    //  -mentee
     @Override
-    public void notifyObservers() {
-        super.notifyObservers();
+    public String toString() {
+        return "Activity{" +
+                "id=" + id +
+                ", location='" + location + '\'' +
+                ", mentor=" + mentor.getId() +
+                ", mentee=" + mentee.getId() +
+                ", subject='" + subject + '\'' +
+                ", starttime=" + starttime +
+                ", mentorrating=" + mentorrating +
+                ", menteerating=" + menteerating +
+                ", isFullfilled=" + isFullfilled +
+                '}';
     }
 
     public String getSubject() {
         return subject;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 

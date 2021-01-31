@@ -21,9 +21,9 @@ public final class PostsContainer {
         return this.data.size();
     }
 
-    public HelpPost getHelpPost(long postid){
+    public HelpPost getHelpPost(String postid){
         for(HelpPost curr: data) {
-            if (curr.getPostid() == postid) {
+            if (curr.getPostid().equals(postid)) {
                 return curr;
             }
         }

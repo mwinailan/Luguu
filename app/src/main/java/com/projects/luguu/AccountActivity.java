@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.projects.luguu.modules.MainApp;
+
 public class AccountActivity extends AppCompatActivity {
 
     @Override
