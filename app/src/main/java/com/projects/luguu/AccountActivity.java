@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.projects.luguu.modules.MainApp;
+
 public class AccountActivity extends AppCompatActivity {
 
     @Override
