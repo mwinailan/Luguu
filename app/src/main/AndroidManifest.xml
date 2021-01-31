@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Luguu">
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".TutorDetailsActivity"></activity>
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".SetUpProfileActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity" />

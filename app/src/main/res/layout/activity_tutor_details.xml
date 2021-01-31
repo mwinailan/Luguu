@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TutorActivity">
+    tools:context=".TutorDetailsActivity"
+    >
 
     <ImageButton
         android:id="@+id/menteeButton"
@@ -33,6 +34,16 @@
         app:layout_constraintStart_toEndOf="@+id/menteeButton"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/luguuIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/luguu_title" />
+
     <ImageButton
         android:id="@+id/accountButton"
         android:layout_width="wrap_content"
@@ -48,46 +59,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/menteeButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/half_ellipse" />
-
-    <ImageView
-        android:id="@+id/luguuIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/mentorButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/luguu_title" />
+        app:srcCompat="@drawable/tutor_details_background" />
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/imageView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/mentorButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/luguuIcon"
-        app:srcCompat="@drawable/tutor_placeholder" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tutor_match_placeholder_card" />
 
-    <ImageButton
-        android:id="@+id/tutorButton1"
+    <ImageView
+        android:id="@+id/imageView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="302dp"
-        android:background="@null"
-        android:src="@drawable/mentor_button"
+        app:layout_constraintBottom_toTopOf="@+id/imageView21"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.196"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/luguuIcon"
+        app:srcCompat="@drawable/you_found_a_match_text" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

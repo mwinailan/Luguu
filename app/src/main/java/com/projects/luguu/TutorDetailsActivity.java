@@ -7,13 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class TutorActivity extends AppCompatActivity {
+public class TutorDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +23,13 @@ public class TutorActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_tutor);
+        setContentView(R.layout.activity_tutor_details);
 
         ImageButton menteeButton =  findViewById(R.id.menteeButton);
         menteeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent menteeMove = new Intent(TutorActivity.this, TuteeActivity.class);
+                Intent menteeMove = new Intent(TutorDetailsActivity.this, TuteeActivity.class);
                 startActivity(menteeMove);
             }
         });
@@ -43,24 +42,15 @@ public class TutorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(user!=null) {
-                    Intent accountMove = new Intent(TutorActivity.this, AccountActivity.class);
+                    Intent accountMove = new Intent(TutorDetailsActivity.this, AccountActivity.class);
                     startActivity(accountMove);
                 }
                 else {
-                    Intent signupMove = new Intent(TutorActivity.this, SignUpActivity.class);
+                    Intent signupMove = new Intent(TutorDetailsActivity.this, SignUpActivity.class);
                     startActivity(signupMove);
                 }
             }
         });
 
-        ImageButton tutorButton1 = findViewById(R.id.tutorButton1);
-        tutorButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent accountMove = new Intent(TutorActivity.this, TutorDetailsActivity.class);
-                startActivity(accountMove);
-            }
-        });
     }
 }
