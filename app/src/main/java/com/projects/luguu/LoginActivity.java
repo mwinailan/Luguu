@@ -22,12 +22,12 @@ public class LoginActivity extends AppCompatActivity {
     private EditText ePassword, eEmail;
     private ImageButton go;
 
-    @Override
-    public void onBackPressed() {
+    //@Override
+    /*public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(LoginActivity.this, TuteeActivity.class));
         finish();
-    }
+    }*/
 
     /*@Override
     public void onStart() {
@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT ).show();
                             }
                             else {
-                                startActivity(new Intent (LoginActivity.this, AccountActivity.class));
+                                startActivity(new Intent (LoginActivity.this, TuteeActivity.class));
                             }
                         }
                     });
