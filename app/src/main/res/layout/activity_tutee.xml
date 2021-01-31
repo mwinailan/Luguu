@@ -2,63 +2,66 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/mentee_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TuteeActivity">
 
-    <Button
-        android:id="@+id/menteeButton"
-        android:layout_width="85dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginBottom="16dp"
-        android:text="Mentee"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:backgroundTint="#EE726A"
-        app:iconTint="#EE726A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/accountButton"
-        android:layout_width="85dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="16dp"
-        android:text="Account"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:backgroundTint="#C4C4C4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/mentorButton"
-        android:layout_width="85dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginBottom="16dp"
-        android:text="Mentor"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:backgroundTint="#C4C4C4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageButton
-        android:id="@+id/addMenteeButton"
+        android:id="@+id/menteeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="176dp"
-        android:background="#FFFFFF"
-        android:src="@drawable/add_symbol_wbg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="650dp"
+        android:background="@null"
+        android:src="@drawable/mentee_selected"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/mentorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="650dp"
+        android:background="@null"
+        android:src="@drawable/mentor_unselected"
+        app:layout_constraintEnd_toStartOf="@+id/accountButton"
+        app:layout_constraintStart_toEndOf="@+id/menteeButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/accountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:background="@null"
+        android:src="@drawable/account_unselected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:background="@null"
+        android:id="@+id/addMentorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:src="@drawable/add_symbol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

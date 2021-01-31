@@ -9,15 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Luguu">
-        <activity android:name=".AccountActivity"></activity>
-        <activity android:name=".TutorActivity" />
-        <activity android:name=".TuteeActivity">
+        <activity android:name=".AddMentorActivity"></activity>
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AccountActivity" />
+        <activity android:name=".TutorActivity" />
+        <activity android:name=".TuteeActivity" />
     </application>
 
 </manifest>

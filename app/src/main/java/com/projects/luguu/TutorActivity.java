@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class TutorActivity extends AppCompatActivity {
 
@@ -14,7 +15,7 @@ public class TutorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutor);
 
-        Button menteeButton =  findViewById(R.id.menteeButton);
+        ImageButton menteeButton =  findViewById(R.id.menteeButton);
         menteeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,7 +24,7 @@ public class TutorActivity extends AppCompatActivity {
             }
         });
 
-        Button accountButton =  findViewById(R.id.accountButton);
+        ImageButton accountButton =  findViewById(R.id.accountButton);
         accountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -6,64 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".AccountActivity">
 
-    <Button
-        android:id="@+id/menteeButton"
-        android:layout_width="85dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginBottom="16dp"
-        android:text="Mentee"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:backgroundTint="#C4C4C4"
-        app:iconTint="#EE726A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/accountButton"
-        android:layout_width="85dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="16dp"
-        android:text="Account"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:backgroundTint="#EE726A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/mentorButton"
-        android:layout_width="85dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginBottom="16dp"
-        android:text="Mentor"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:backgroundTint="#C4C4C4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="177dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/account_details_text" />
-
     <TextView
         android:id="@+id/emailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="244dp"
         android:layout_marginLeft="244dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="183dp"
         android:text="example@gmail.com"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -74,24 +23,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="260dp"
         android:layout_marginLeft="260dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginTop="263dp"
         android:text="+1 (604) 714-4173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/addMenteeButton"
+        android:id="@+id/addMentorButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="152dp"
         android:layout_marginLeft="152dp"
-        android:layout_marginTop="224dp"
-        android:background="#FFFFFF"
-        android:src="@drawable/change_password_text"
+        android:layout_marginTop="214dp"
+        android:background="@null"
+        android:src="@drawable/change_password_orange"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -129,25 +78,100 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/menteeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="650dp"
+        android:background="@null"
+        android:src="@drawable/mentee_unselected"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/mentorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="650dp"
+        android:background="@null"
+        android:src="@drawable/mentor_unselected"
+        app:layout_constraintEnd_toStartOf="@+id/accountButton"
+        app:layout_constraintStart_toEndOf="@+id/menteeButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/accountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:background="@null"
+        android:src="@drawable/account_selected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="177dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/account_details_text" />
+
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/buddies_text" />
+        app:srcCompat="@drawable/your_buddies_as" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="360dp"
+        app:layout_constraintEnd_toStartOf="@+id/saveContactTestButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/account_card_save" />
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="409dp"
-        android:layout_height="225dp"
-        android:layout_marginBottom="104dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="360dp"
+        app:layout_constraintStart_toEndOf="@+id/saveContactTestButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/account_card_save" />
+
+    <ImageButton
+        android:id="@+id/saveContactTestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="360dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:background="@null"
+        android:src="@drawable/account_card_save"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/buddies_example" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
