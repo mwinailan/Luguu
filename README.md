@@ -67,4 +67,4 @@ Luguu will actively develop as a platform to stregthen its vision and mission to
 
 - **Github**          : https://github.com/mwinailan/luguu
 - **Figma Prototype** : https://www.figma.com/proto/HGMS7Xy42EleyvLeOOkkvb/CuHacks?node-id=39%3A16&scaling=scale-down
-- **Bubble Web**      : https://www.luggu.bubbleapps.io
+- **Bubble Web**      : https://luggu.bubbleapps.io
