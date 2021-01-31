@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/signinEmailEntry"
+        android:id="@+id/editEmail"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="428dp"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/signinPasswordEntry"
+        android:id="@+id/editPassword"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="528dp"
@@ -73,6 +73,16 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/luguuIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/luguu_title" />
 
     <ImageButton
         android:id="@+id/goToSignUpButton"

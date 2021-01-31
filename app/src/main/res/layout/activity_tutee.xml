@@ -15,7 +15,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="680dp"
         android:background="@null"
         android:src="@drawable/mentee_selected"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="680dp"
         android:background="@null"
         android:src="@drawable/mentor_unselected"
         app:layout_constraintEnd_toStartOf="@+id/accountButton"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="680dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:background="@null"
@@ -62,6 +62,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+
+    <ImageView
+        android:id="@+id/luguuIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/luguu_title" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

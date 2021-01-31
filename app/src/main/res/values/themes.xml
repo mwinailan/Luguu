@@ -23,7 +23,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Luguu.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Luguu.AppBarOverlay" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="Theme.Luguu.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.Luguu.PopupOverlay" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 </resources>

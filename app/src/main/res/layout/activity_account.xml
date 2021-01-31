@@ -45,23 +45,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="95dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/nostars_placeholder" />
-
-    <ImageView
         android:id="@+id/profilePicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/circle_grey" />
@@ -70,13 +59,24 @@
         android:id="@+id/nameTextView"
         android:layout_width="199dp"
         android:layout_height="33dp"
-        android:layout_marginStart="135dp"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="59dp"
-        android:text="John Doe"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="80dp"
+        android:text="Matthew Justine"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="116dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nostars_placeholder" />
 
     <ImageButton
         android:id="@+id/menteeButton"
@@ -86,7 +86,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="680dp"
         android:background="@null"
         android:src="@drawable/mentee_unselected"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="680dp"
         android:background="@null"
         android:src="@drawable/mentor_unselected"
         app:layout_constraintEnd_toStartOf="@+id/accountButton"
@@ -111,7 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="680dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:background="@null"
@@ -130,11 +130,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/account_details_text" />
 
+    <ImageButton
+        android:id="@+id/saveContactTestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:background="@null"
+        android:src="@drawable/account_card_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="388dp"
+        app:layout_constraintEnd_toStartOf="@+id/saveContactTestButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/account_card_save" />
+
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="328dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,35 +165,36 @@
         app:srcCompat="@drawable/your_buddies_as" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
-        app:layout_constraintEnd_toStartOf="@+id/saveContactTestButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/account_card_save" />
-
-    <ImageView
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="388dp"
         app:layout_constraintStart_toEndOf="@+id/saveContactTestButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/account_card_save" />
 
+    <ImageView
+        android:id="@+id/luguuIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/luguu_title" />
+
     <ImageButton
-        android:id="@+id/saveContactTestButton"
+        android:id="@+id/settingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginRight="96dp"
+        android:layout_marginStart="323dp"
+        android:layout_marginLeft="323dp"
+        android:layout_marginTop="25dp"
         android:background="@null"
-        android:src="@drawable/account_card_save"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/settings_icon"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
