@@ -1,35 +1,26 @@
 package com.projects.luguu.modules;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firestore.v1.WriteResult;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 public final class MainApp {
+
     private static final MainApp INSTANCE = new MainApp();
 
     private Account activeAccount;
-    FirebaseFirestore db;
+    FirebaseHandler firebaseHandler;
 
     private MainApp(){
         this.activeAccount = null;
-        db = FirebaseFirestore.getInstance();
+        firebaseHandler = new FirebaseHandler();
+    }
+
+    public void getAccount(String accountID){
+        firebaseHandler.getAccount(accountID);
     }
 
     public void addAccount(Account account){
-        this.db.collection("users").document(account.getId()).set(account)
-            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    System.out.println("Added user with id: " + account.getId());
-                }
-            });
-
+        firebaseHandler.addAccount(account);
     }
+
+    public void addHelpPost(HelpPost post) { firebaseHandler.addHelpPost(post);}
 
     public static MainApp getInstance() {
         return INSTANCE;
@@ -37,6 +28,11 @@ public final class MainApp {
 
     public Account getActiveAccount() {
         return activeAccount;
+    }
+
+    public void update(){
+        System.out.println("            UPDATING\n");
+        firebaseHandler.update();
     }
 
     public void setActiveAccount(Account activeAccount) {

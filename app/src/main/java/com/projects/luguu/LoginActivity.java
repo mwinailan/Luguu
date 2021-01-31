@@ -16,11 +16,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.projects.luguu.modules.Account;
+import com.projects.luguu.modules.AccountsContainer;
+import com.projects.luguu.modules.FirebaseHandler;
+import com.projects.luguu.modules.MainApp;
 
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText ePassword, eEmail;
     private ImageButton go;
+    private FirebaseHandler firebaseHandler = new FirebaseHandler();
+    private MainApp mainApp = MainApp.getInstance();
 
     //@Override
     /*public void onBackPressed() {
@@ -41,7 +47,20 @@ public class LoginActivity extends AppCompatActivity {
     }*/
 
     @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        mainApp.update();
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if (currentUser != null) {
+//            startActivity(new Intent(LoginActivity.this, AccountActivity.class));
+//            finish();
+//        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
+        firebaseHandler.getAllAccount();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         mAuth = FirebaseAuth.getInstance();
@@ -72,20 +91,30 @@ public class LoginActivity extends AppCompatActivity {
                     ePassword.setError("Please enter a password");
                     ePassword.requestFocus();
                 }
-                if (!(password.isEmpty() && email.isEmpty()))
-                {
-                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful())
-                            {
-                                Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT ).show();
-                            }
-                            else {
-                                startActivity(new Intent (LoginActivity.this, TuteeActivity.class));
-                            }
+                if (!(password.isEmpty() && email.isEmpty())){
+                    boolean found = false;
+                    for(Account acc: AccountsContainer.getAccounts()){
+                        if(acc.getEmail().equals(email) && acc.getPassword().equals(password)){
+                            mainApp.setActiveAccount(acc);
+                            startActivity(new Intent (LoginActivity.this, TuteeActivity.class));
+                            found = true;
                         }
-                    });
+                    }
+                    if(!found){
+                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT ).show();
+                    }
+//                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<AuthResult> task) {
+//                            if (!task.isSuccessful())
+//                            {
+//                                Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT ).show();
+//                            }
+//                            else {
+//                                startActivity(new Intent (LoginActivity.this, TuteeActivity.class));
+//                            }
+//                        }
+//                    });
                 }
 
             }

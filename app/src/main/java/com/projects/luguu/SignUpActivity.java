@@ -14,14 +14,21 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.projects.luguu.modules.Account;
+import com.projects.luguu.modules.HelpPost;
+import com.projects.luguu.modules.MainApp;
+
+import java.util.Date;
 
 public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText ePassword, eEmail, eConfirm;
+    private MainApp mainApp = MainApp.getInstance();
 
     @Override
     public void onBackPressed() {
@@ -33,6 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
+        mainApp.update();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
@@ -48,6 +56,11 @@ public class SignUpActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        //Testing
+        FirebaseApp.initializeApp(this);
+//        Account testAccount = new Account("testName", 23947203, "testname@gmail.com");
+//        HelpPost testhelp = new HelpPost(testAccount, "MATH 200", "testdesc", new Date(), "UBC");
+//        this.mainApp.addHelpPost(testhelp);
 
         // Set application to full screen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -100,24 +113,31 @@ public class SignUpActivity extends AppCompatActivity {
 
 
                 if (!(password.isEmpty() && email.isEmpty()) && confirm.equals(password)) {
-                    mAuth.createUserWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information
-                                        FirebaseUser user = mAuth.getCurrentUser();
-                                        Toast.makeText(SignUpActivity.this, "Sign Up Successful.",
-                                                Toast.LENGTH_SHORT).show();
-                                        Intent signupMove = new Intent(SignUpActivity.this, SetUpProfileActivity.class);
-                                        startActivity(signupMove);
-                                    } else {
-                                        // If sign in fails, display a message to the user.
-                                        Toast.makeText(SignUpActivity.this, "Authentication failed.",
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
+                    Account newAcc = new Account("", email, password);
+                    mainApp.addAccount(newAcc);
+                    mainApp.setActiveAccount(newAcc);
+                    Toast.makeText(SignUpActivity.this, "Sign Up Successful.",
+                            Toast.LENGTH_SHORT).show();
+                    Intent signupMove = new Intent(SignUpActivity.this, SetUpProfileActivity.class);
+                    startActivity(signupMove);
+//                    mAuth.createUserWithEmailAndPassword(email, password)
+//                            .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<AuthResult> task) {
+//                                    if (task.isSuccessful()) {
+//                                        // Sign in success, update UI with the signed-in user's information
+//                                        FirebaseUser user = mAuth.getCurrentUser();
+//                                        Toast.makeText(SignUpActivity.this, "Sign Up Successful.",
+//                                                Toast.LENGTH_SHORT).show();
+//                                        Intent signupMove = new Intent(SignUpActivity.this, SetUpProfileActivity.class);
+//                                        startActivity(signupMove);
+//                                    } else {
+//                                        // If sign in fails, display a message to the user.
+//                                        Toast.makeText(SignUpActivity.this, "Authentication failed.",
+//                                                Toast.LENGTH_SHORT).show();
+//                                    }
+//                                }
+//                            });
                 }
             }
         });

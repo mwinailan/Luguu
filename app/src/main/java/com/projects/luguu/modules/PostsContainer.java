@@ -30,8 +30,21 @@ public final class PostsContainer {
         return null;
     }
 
+    public void print(){
+        System.out.println("        Contents in postsContainer: \n");
+        for(HelpPost post: data){
+            System.out.println(post.toString() + "\n");
+        }
+    }
+
     public void addPost(HelpPost helpPost){
+        for(HelpPost hpost: data){
+            if(hpost.getPostid().equals(helpPost.getPostid())){
+                return;
+            }
+        }
         this.data.add(helpPost);
+        print();
     }
 
     public void removePost(HelpPost toDelete){
