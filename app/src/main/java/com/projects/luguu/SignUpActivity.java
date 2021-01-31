@@ -1,6 +1,5 @@
 package com.projects.luguu;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,17 +11,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.projects.luguu.modules.Account;
-import com.projects.luguu.modules.HelpPost;
 import com.projects.luguu.modules.MainApp;
-
-import java.util.Date;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -83,7 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
         eEmail = findViewById(R.id.eEmail);
         eConfirm = findViewById(R.id.eConfirm);
 
-        ImageButton signupButton = findViewById(R.id.signoutButton);
+        ImageButton signupButton = findViewById(R.id.signupButton);
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -23,7 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        ImageButton signoutButton = findViewById(R.id.signoutButton);
+        ImageButton signoutButton = findViewById(R.id.signupButton);
         signoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

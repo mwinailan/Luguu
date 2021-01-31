@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/sign_up_background" />
 
     <ImageButton
-        android:id="@+id/signoutButton"
+        android:id="@+id/signupButton"
         android:layout_width="154dp"
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
