@@ -30,7 +30,7 @@ public class SettingsActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(SettingsActivity.this, "User Signed Out.",
                         Toast.LENGTH_SHORT).show();
-                Intent signoutMove = new Intent(SettingsActivity.this, TuteeActivity.class);
+                Intent signoutMove = new Intent(SettingsActivity.this, LoginActivity.class);
                 startActivity(signoutMove);
             }
         });

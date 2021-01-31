@@ -22,14 +22,14 @@ public class LoginActivity extends AppCompatActivity {
     private EditText ePassword, eEmail;
     private ImageButton go;
 
-    @Override
-    public void onBackPressed() {
+    //@Override
+    /*public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(LoginActivity.this, TuteeActivity.class));
         finish();
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this, AccountActivity.class));
             finish();
         }
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,16 @@ public class LoginActivity extends AppCompatActivity {
         ePassword = findViewById(R.id.editPassword);
         eEmail = findViewById(R.id.editEmail);
         go = findViewById(R.id.signinButton);
+
+        ImageButton loginButton = findViewById(R.id.goToSignUpButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent loginMove = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(loginMove);
+            }
+        });
+
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT ).show();
                             }
                             else {
-                                startActivity(new Intent (LoginActivity.this, AccountActivity.class));
+                                startActivity(new Intent (LoginActivity.this, TuteeActivity.class));
                             }
                         }
                     });
