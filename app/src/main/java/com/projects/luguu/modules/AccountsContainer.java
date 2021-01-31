@@ -16,11 +16,24 @@ public final class AccountsContainer {
     }
 
     public void updateContent(){
+        firebaseHandler.getAllAccount();
+    }
 
+    public static ArrayList<Account> getAccounts() {
+        return accounts;
     }
 
     public void addAccount(Account account){
+        for(Account acc: accounts){
+            if(acc.getId().equals(account.getId())){
+                return;
+            }
+        }
         accounts.add(account);
+        print();
+    }
+
+    public void print(){
         System.out.println("        Contents in accountsContainer: \n");
         for(Account acc: accounts){
             System.out.println(acc.toString() + "\n");

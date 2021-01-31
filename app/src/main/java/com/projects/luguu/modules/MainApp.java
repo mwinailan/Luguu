@@ -20,12 +20,19 @@ public final class MainApp {
         firebaseHandler.addAccount(account);
     }
 
+    public void addHelpPost(HelpPost post) { firebaseHandler.addHelpPost(post);}
+
     public static MainApp getInstance() {
         return INSTANCE;
     }
 
     public Account getActiveAccount() {
         return activeAccount;
+    }
+
+    public void update(){
+        System.out.println("            UPDATING\n");
+        firebaseHandler.update();
     }
 
     public void setActiveAccount(Account activeAccount) {

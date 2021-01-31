@@ -18,8 +18,11 @@ public class Account{
     private float rating;
     private Activity currentActivity;
     private UUID id;
+    private String email;
+    private String password;
 
     private static PostsContainer postsContainer;
+    private static AccountsContainer accountsContainer;
 
     public Account(){
         this.name = null;
@@ -30,9 +33,13 @@ public class Account{
         this.rating = 0;
         this.currentActivity = null;
         this.id = UUID.randomUUID();
+        this.email = null;
+
+        postsContainer = PostsContainer.getInstance();
+        accountsContainer = AccountsContainer.getInstance();
     }
 
-    public Account(String name, long phoneNumber){
+    public Account(String name, String email, String password){
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.mentoringhistory = new ArrayList<>();
@@ -41,6 +48,10 @@ public class Account{
         this.rating = 0;
         this.currentActivity = null;
         postsContainer = PostsContainer.getInstance();
+        accountsContainer = AccountsContainer.getInstance();
+
+        this.email = email;
+        this.password = password;
 
         this.id = UUID.randomUUID();
         System.out.println("Created Account with id: " + id);
@@ -56,10 +67,11 @@ public class Account{
     }
 
     public boolean acceptRequest(HelpPost hpost){
-        Activity newActivity = new Activity(this, hpost.getPoster(), hpost.getSubject(), hpost.getLocation(), hpost.getStarttime(), hpost.getPostid());
+        Activity newActivity = new Activity(this,
+                accountsContainer.getAccount(hpost.getPoster().toString()),
+                hpost.getSubject(), hpost.getLocation(), new Date(hpost.getStarttime()),
+                UUID.fromString(hpost.getPostid()));
         this.currentActivity = newActivity;
-        hpost.getPoster().setCurrentActivity(newActivity);
-        hpost.getPoster().removeActivePost(hpost);
         return false;
     }
 
@@ -75,8 +87,24 @@ public class Account{
         this.currentActivity = activity;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public float getRating() {
@@ -147,6 +175,8 @@ public class Account{
         output.setId(UUID.fromString(mapData.get("id").toString()));
         output.setPhoneNumber(Long.parseLong(mapData.get("phoneNumber").toString()));
         output.setRating(Float.parseFloat(mapData.get("rating").toString()));
+        output.setEmail(mapData.get("email").toString());
+        output.setPassword(mapData.get("password").toString());
         output.setCurrentActivity(Activity.parseFromMapData(
                 (Map<String, Object>) mapData.get("currentActivity")
         ));

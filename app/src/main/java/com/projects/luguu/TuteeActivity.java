@@ -1,14 +1,13 @@
 package com.projects.luguu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,11 +35,12 @@ public class TuteeActivity extends AppCompatActivity {
 
         FirebaseApp.initializeApp(this);
         //Testing
-        Account testAccount = new Account("testFromJava", 9808);
-        testAccount.addMenteeingActivity(
-                new Activity(testAccount,testAccount, "MATH 200", "UBC", new Date(), testAccount.getId())
-        );
-        mainApp.addAccount(testAccount);
+//        Account testAccount = new Account("testFromJava", 9808, "testemail@gmail.com");
+//        testAccount.addMenteeingActivity(
+//                new Activity(testAccount,testAccount, "MATH 200", "UBC", new Date(), testAccount.getUUID())
+//        );
+//        mainApp.addAccount(testAccount);
+//        mainApp.getAccount(testAccount.getId());
 
         ImageButton mentorButton =  findViewById(R.id.mentorButton);
         mentorButton.setOnClickListener(new View.OnClickListener() {
