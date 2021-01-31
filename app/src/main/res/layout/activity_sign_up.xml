@@ -61,7 +61,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/signupConfirmEntry"
+        android:id="@+id/eConfirm"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="596dp"

@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private EditText ePassword, eEmail;
+    private EditText ePassword, eEmail, eConfirm;
 
     @Override
     public void onBackPressed() {
@@ -70,15 +70,17 @@ public class SignUpActivity extends AppCompatActivity {
         // Obtain User Details
         ePassword = findViewById(R.id.ePassword);
         eEmail = findViewById(R.id.eEmail);
+        eConfirm = findViewById(R.id.eConfirm);
 
         ImageButton signupButton = findViewById(R.id.signupButton);
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //TODO : CREATE ACCOUNT IN DATABASE HERE
                 String email = eEmail.getText().toString();
                 String password = ePassword.getText().toString();
+                String confirm = eConfirm.getText().toString();
+
                 if (email.isEmpty()) {
                     eEmail.setError("Please enter your email");
                     eEmail.requestFocus();
@@ -87,8 +89,19 @@ public class SignUpActivity extends AppCompatActivity {
                     ePassword.setError("Please enter a password");
                     ePassword.requestFocus();
                 }
+                if (confirm.isEmpty()) {
+                    eConfirm.setError("Please re-enter password");
+                    eConfirm.requestFocus();
+                }
+                if (!confirm.equals(password)) {
+                    ePassword.setError("Passwords do not match");
+                    ePassword.requestFocus();
+                    eConfirm.setError("Passwords do not match");
+                    eConfirm.requestFocus();
+                }
 
-                if (!(password.isEmpty() && email.isEmpty())) {
+
+                if (!(password.isEmpty() && email.isEmpty()) && confirm.equals(password)) {
                     mAuth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -96,7 +109,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                        Toast.makeText(SignUpActivity.this, "Sign In Success.",
+                                        Toast.makeText(SignUpActivity.this, "Sign Up Successful.",
                                                 Toast.LENGTH_SHORT).show();
                                         Intent signupMove = new Intent(SignUpActivity.this, SetUpProfileActivity.class);
                                         startActivity(signupMove);
@@ -108,8 +121,6 @@ public class SignUpActivity extends AppCompatActivity {
                                 }
                             });
                 }
-                Intent signupMove = new Intent(SignUpActivity.this, SetUpProfileActivity.class);
-                startActivity(signupMove);
             }
         });
     }
