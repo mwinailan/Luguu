@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -62,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent loginMove = new Intent(SignUpActivity.this, SignInActivity.class);
+                Intent loginMove = new Intent(SignUpActivity.this, LoginActivity.class);
                 startActivity(loginMove);
             }
         });
@@ -72,7 +70,7 @@ public class SignUpActivity extends AppCompatActivity {
         eEmail = findViewById(R.id.eEmail);
         eConfirm = findViewById(R.id.eConfirm);
 
-        ImageButton signupButton = findViewById(R.id.signupButton);
+        ImageButton signupButton = findViewById(R.id.signoutButton);
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

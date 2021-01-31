@@ -59,10 +59,7 @@ public class AccountActivity extends AppCompatActivity {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(AccountActivity.this, "User Logged Out.",
-                        Toast.LENGTH_SHORT).show();
-                Intent tuteeMove = new Intent(AccountActivity.this, TuteeActivity.class);
+                Intent tuteeMove = new Intent(AccountActivity.this, SettingsActivity.class);
                 startActivity(tuteeMove);
             }
         });
