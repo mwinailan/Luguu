@@ -191,9 +191,10 @@ public class Account{
             mentoringhistory.add(Activity.parseFromMapData((Map<String, Object>) obj));
         }
         output.setMentoringhistory(mentoringhistory);
-
+        System.out.println(output.toString());
         return output;
     }
+
 
     @Override
     public String toString() {
@@ -206,6 +207,8 @@ public class Account{
                 ", rating=" + rating +
                 ", currentActivity=" + currentActivity +
                 ", id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

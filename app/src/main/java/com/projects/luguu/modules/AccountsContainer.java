@@ -29,6 +29,7 @@ public final class AccountsContainer {
                 return;
             }
         }
+
         accounts.add(account);
         print();
     }

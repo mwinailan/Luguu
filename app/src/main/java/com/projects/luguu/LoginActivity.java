@@ -47,6 +47,18 @@ public class LoginActivity extends AppCompatActivity {
     }*/
 
     @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        mainApp.update();
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if (currentUser != null) {
+//            startActivity(new Intent(LoginActivity.this, AccountActivity.class));
+//            finish();
+//        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         firebaseHandler.getAllAccount();
         super.onCreate(savedInstanceState);
@@ -79,15 +91,16 @@ public class LoginActivity extends AppCompatActivity {
                     ePassword.setError("Please enter a password");
                     ePassword.requestFocus();
                 }
-                if (!(password.isEmpty() && email.isEmpty()))
-                {   Account rsf = null;
+                if (!(password.isEmpty() && email.isEmpty())){
+                    boolean found = false;
                     for(Account acc: AccountsContainer.getAccounts()){
-                        rsf = acc;
+                        if(acc.getEmail().equals(email) && acc.getPassword().equals(password)){
+                            mainApp.setActiveAccount(acc);
+                            startActivity(new Intent (LoginActivity.this, TuteeActivity.class));
+                            found = true;
+                        }
                     }
-                    if(rsf != null){
-                        mainApp.setActiveAccount(rsf);
-                        startActivity(new Intent (LoginActivity.this, TuteeActivity.class));
-                    }else{
+                    if(!found){
                         Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT ).show();
                     }
 //                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {

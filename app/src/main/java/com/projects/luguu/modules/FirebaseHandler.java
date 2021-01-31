@@ -33,7 +33,7 @@ public class FirebaseHandler {
     }
 
     public void getAllAccount(){
-        CollectionReference collectionReference = db.collection("user");
+        CollectionReference collectionReference = db.collection("users");
         new Thread(){
             public void run(){
                 System.out.println("Getting all account from firebase");
@@ -41,9 +41,12 @@ public class FirebaseHandler {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if(task.isSuccessful()){
+                            System.out.println("Task is successfull");
                             for(QueryDocumentSnapshot document: task.getResult()){
+                                System.out.println("Document: " + document.getData());
                                 accountsContainer.addAccount(Account.parseFromMapData(document.getData()));
                             }
+                            accountsContainer.print();
                         }else {
                             System.out.println("Error in updating document");
                         }
