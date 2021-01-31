@@ -58,6 +58,8 @@ Luguu will actively develop as a platform to stregthen its vision and mission to
 - Android Studio
 - Firebase
 - Bubble
+- Adobe Illustrator
+- Adobe Premiere
 
 -------------------
 
